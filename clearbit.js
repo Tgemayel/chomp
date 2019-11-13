@@ -26,12 +26,18 @@ function loadDomainInfo() {
     // console.log('response.data:', response.data);
     console.log('api success:', domain);
     const name = response.data.name;
+    const legalName = response.data.legalName;
     const tags = response.data.tags;
     const description = processString(response.data.description);
-    const facebook_handle = response.data.facebook.handle;
+    const category_sector = response.data.category.sector;
+    const industry = response.data.category.industry;
     const employees = response.data.metrics.employees;
+    const employeeRange = response.data.metrics.employeeRange;
+    const alexa = response.data.metrics.alexaGlobalRank;
+    const country = response.data.geo.country;
+    const state = response.data.geo.state;
     const type = response.data.type;
-    const entry = { domain, name, tags: tags.join(','), description, facebook_handle, employees, type };
+    const entry = { domain, name, legalName, tags: tags.join(','), description, category_sector, industry, employees, employeeRange, alexa, country, state, type };
     // domainData.push(entry);
     console.log('entry:', entry);
     stringify([entry], {header:false}, function(err, data) {
