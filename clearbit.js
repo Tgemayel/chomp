@@ -32,12 +32,12 @@ function loadDomainInfo() {
     const category_sector = response.data.category.sector;
     const industry = response.data.category.industry;
     const employees = response.data.metrics.employees;
-    const employeeRange = response.data.metrics.employeeRange;
+    const employeesRange = response.data.metrics.employeesRange;
     const alexa = response.data.metrics.alexaGlobalRank;
     const country = response.data.geo.country;
     const state = response.data.geo.state;
     const type = response.data.type;
-    const entry = { domain, name, legalName, tags: tags.join(','), description, category_sector, industry, employees, employeeRange, alexa, country, state, type };
+    const entry = { domain, name, legalName, tags: tags.join(','), description, category_sector, industry, employees, employeesRange, alexa, country, state, type };
     // domainData.push(entry);
     console.log('entry:', entry);
     stringify([entry], {header:false}, function(err, data) {
